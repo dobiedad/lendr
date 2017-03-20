@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Fibon_Sans_Regular.otf">
+            <string>FibonSans-Thin</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="104" id="iJS-E0-oyl" customClass="HomeTableCell" customModule="iOweYou" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iJS-E0-oyl" id="DbT-tP-j4Y">
+                <rect key="frame" x="0.0" y="0.0" width="377" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CjV-CZ-i5G" userLabel="leftLabel">
+                        <rect key="frame" x="80" y="17" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" name="FibonSans-Thin" family="Fibon Sans" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WCP-Mj-z8g">
+                        <rect key="frame" x="10" y="17" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="7Oc-Ai-qYo"/>
+                            <constraint firstAttribute="width" constant="60" id="EaA-Mi-QHR"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L29-4c-g1X" userLabel="rightLabel">
+                        <rect key="frame" x="85" y="19" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" name="FibonSans-Thin" family="Fibon Sans" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3QE-Hk-9jd">
+                        <rect key="frame" x="324" y="30" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="Sax-ZJ-Nwu"/>
+                            <constraint firstAttribute="height" constant="40" id="gUh-VF-PWp"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAr-tT-jJh">
+                        <rect key="frame" x="80" y="77" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" name="FibonSans-Thin" family="Fibon Sans" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsV-Iw-zyT" userLabel="middleLabel">
+                        <rect key="frame" x="80" y="19" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" name="FibonSans-Thin" family="Fibon Sans" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.054901960780000002" green="0.20784313730000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="CjV-CZ-i5G" firstAttribute="leading" secondItem="WCP-Mj-z8g" secondAttribute="trailing" constant="10" id="0xR-ia-i9Q"/>
+                    <constraint firstItem="CjV-CZ-i5G" firstAttribute="top" secondItem="WCP-Mj-z8g" secondAttribute="top" id="2Sv-WJ-Xxr"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="3QE-Hk-9jd" secondAttribute="trailing" constant="5" id="A6B-jb-Q4G"/>
+                    <constraint firstItem="L29-4c-g1X" firstAttribute="leading" secondItem="GsV-Iw-zyT" secondAttribute="trailing" constant="5" id="DrK-gC-xhf"/>
+                    <constraint firstItem="WCP-Mj-z8g" firstAttribute="top" secondItem="DbT-tP-j4Y" secondAttribute="top" constant="17.5" id="IYj-VV-p5l"/>
+                    <constraint firstItem="GsV-Iw-zyT" firstAttribute="top" secondItem="CjV-CZ-i5G" secondAttribute="bottom" constant="2" id="Wn9-NB-zYJ"/>
+                    <constraint firstItem="L29-4c-g1X" firstAttribute="top" secondItem="GsV-Iw-zyT" secondAttribute="top" id="X8N-Ke-g6y"/>
+                    <constraint firstItem="WCP-Mj-z8g" firstAttribute="leading" secondItem="DbT-tP-j4Y" secondAttribute="leading" constant="10" id="kDB-cv-VaG"/>
+                    <constraint firstItem="GsV-Iw-zyT" firstAttribute="leading" secondItem="WCP-Mj-z8g" secondAttribute="trailing" constant="10" id="kt9-c5-O4F"/>
+                    <constraint firstItem="mAr-tT-jJh" firstAttribute="bottom" secondItem="WCP-Mj-z8g" secondAttribute="bottom" id="lKt-zx-Nbm"/>
+                    <constraint firstItem="mAr-tT-jJh" firstAttribute="leading" secondItem="WCP-Mj-z8g" secondAttribute="trailing" constant="10" id="u1t-WZ-9Zj"/>
+                    <constraint firstItem="3QE-Hk-9jd" firstAttribute="centerY" secondItem="DbT-tP-j4Y" secondAttribute="centerY" id="w2m-u8-LKU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="checkmarkImage" destination="3QE-Hk-9jd" id="LL6-fk-6sy"/>
+                <outlet property="dateLabel" destination="mAr-tT-jJh" id="FJr-kN-rfB"/>
+                <outlet property="leftLabel" destination="CjV-CZ-i5G" id="jWH-eJ-YNk"/>
+                <outlet property="middleLabel" destination="GsV-Iw-zyT" id="6yM-E6-rXm"/>
+                <outlet property="profileImage" destination="WCP-Mj-z8g" id="GmT-JU-k5d"/>
+                <outlet property="rightLabel" destination="L29-4c-g1X" id="yVc-3B-CxK"/>
+            </connections>
+            <point key="canvasLocation" x="38.5" y="155.5"/>
+        </tableViewCell>
+    </objects>
+</document>
