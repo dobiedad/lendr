@@ -3,20 +3,27 @@ import FirebaseAuth
 import SCLAlertView
 import FBSDKShareKit
 
-class FriendsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FriendsController: UIViewController, UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate {
     
-    var friends: Array<User> = []
+    var allFriends: Array<User> = []
     
+    var searchResults: Array<User> = []
+
     let cellReuseIdentifier = "friendsCell"
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTable()
         self.loadData()
-
+        self.searchBar.delegate = self;
+        let textFieldInsideSearchBar = self.searchBar.value(forKey: "searchField") as? UITextField
+        
+        textFieldInsideSearchBar?.textColor = UIColor.white
     }
     
     @IBAction func inviteTapped(_ sender: Any) {
@@ -31,7 +38,8 @@ class FriendsController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         alert.showWait("Loading...", subTitle: "", closeButtonTitle: "", duration: 0, colorStyle: 169085, colorTextButton: 169085, circleIconImage: nil, animationStyle:.topToBottom)
         AuthService().getFriends(completion: { (array) in
-            self.friends = array as! Array<User>
+            self.allFriends = array as! Array<User>
+            self.searchResults = self.allFriends
             alert.hideView()
             self.tableView.reloadData()
         })
@@ -41,7 +49,7 @@ class FriendsController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         var numOfSections: Int = 0
 
-        if (self.friends.count > 0){
+        if (self.searchResults.count > 0){
             tableView.separatorStyle = .singleLine
             numOfSections            = 1
             tableView.backgroundView = nil
@@ -49,7 +57,7 @@ class FriendsController: UIViewController, UITableViewDelegate, UITableViewDataS
         else
         {
             let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: tableView.bounds.size.height))
-            noDataLabel.text          = "Non of your facebook friends seem to be using lendr"
+            noDataLabel.text          = self.allFriends.count >  0 ? "No Results" : "Non of your facebook friends seem to be using lendr"
             noDataLabel.textColor     = UIColor.white
             noDataLabel.font = UIFont (name: "FibonSans-Thin", size: 18)
             noDataLabel.textAlignment = .center
@@ -73,7 +81,7 @@ class FriendsController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.friends.count
+        return self.searchResults.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -84,7 +92,7 @@ class FriendsController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:HomeTableCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! HomeTableCell
-        let array : NSArray = self.friends as NSArray
+        let array : NSArray = self.searchResults as NSArray
         let user : User = array[indexPath.row] as! User
         
         cell.configureForFriendsList(user: user)
@@ -94,7 +102,7 @@ class FriendsController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let array : NSArray = self.friends as NSArray
+        let array : NSArray = self.searchResults as NSArray
         
         let user : User = array[indexPath.row] as! User
 
@@ -124,6 +132,24 @@ class FriendsController: UIViewController, UITableViewDelegate, UITableViewDataS
         alert.showEdit("New Debt", subTitle: "How much does "
             + user.name +  " owe you?")
         
+    }
+    
+    
+    func search(text: String) -> Void
+    {
+        
+        if(text.characters.count < 1){
+            self.searchResults = self.allFriends
+        }
+        else{
+            self.searchResults = self.allFriends.filter(){ (User) -> Bool in
+                let range = User.name.range(of: text); return range != nil }
+        }
+        self.tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.search(text: searchText)
     }
     
 }

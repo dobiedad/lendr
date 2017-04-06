@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="68S-BF-Pt6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="68S-BF-Pt6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,13 +51,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6t-iL-9w2" userLabel="iOweLabel">
-                                        <rect key="frame" x="10" y="90" width="118" height="0.0"/>
+                                        <rect key="frame" x="10" y="87" width="118" height="0.0"/>
                                         <fontDescription key="fontDescription" name="FibonSans-Thin" family="Fibon Sans" pointSize="13"/>
                                         <color key="textColor" red="0.074509803920000006" green="0.61176470589999998" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVW-ON-i6G" userLabel="iOweLabel">
-                                        <rect key="frame" x="243" y="65" width="127" height="20"/>
+                                        <rect key="frame" x="243" y="65" width="127" height="17"/>
                                         <fontDescription key="fontDescription" name="FibonSans-Thin" family="Fibon Sans" pointSize="17"/>
                                         <color key="textColor" red="0.086274509799999996" green="0.62745098040000002" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -78,7 +78,7 @@
                                         <rect key="frame" x="339" y="186" width="30" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spv-do-B6X">
-                                                <rect key="frame" x="11" y="8.5" width="9" height="17.5"/>
+                                                <rect key="frame" x="11" y="9" width="9" height="15"/>
                                                 <fontDescription key="fontDescription" name="FibonSans-Thin" family="Fibon Sans" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -93,13 +93,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfb-ge-Dy1" userLabel="iOweLabel">
-                                        <rect key="frame" x="248" y="90" width="117" height="0.0"/>
+                                        <rect key="frame" x="248" y="87" width="117" height="0.0"/>
                                         <fontDescription key="fontDescription" name="FibonSans-Thin" family="Fibon Sans" pointSize="13"/>
                                         <color key="textColor" red="0.074509803920000006" green="0.61176470589999998" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oL8-2A-ofI" userLabel="iOweLabel">
-                                        <rect key="frame" x="5" y="65" width="128" height="20"/>
+                                        <rect key="frame" x="5" y="65" width="128" height="17"/>
                                         <fontDescription key="fontDescription" name="FibonSans-Thin" family="Fibon Sans" pointSize="17"/>
                                         <color key="textColor" red="0.086274509799999996" green="0.62745098040000002" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -237,8 +237,18 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" barStyle="blackTranslucent" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="TX3-q3-3l7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.054901960780000002" green="0.20784313730000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.086274509799999996" green="0.62745098040000002" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="H3C-Zn-Tpl" id="gKn-IZ-B3D"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aMT-qz-VIg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.054901960780000002" green="0.20784313730000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -249,10 +259,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.20784313730000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="TX3-q3-3l7" firstAttribute="top" secondItem="OhI-IN-JBd" secondAttribute="bottom" id="8PF-jD-HaC"/>
+                            <constraint firstItem="aMT-qz-VIg" firstAttribute="top" secondItem="TX3-q3-3l7" secondAttribute="bottom" id="GOc-lb-98L"/>
                             <constraint firstItem="aMT-qz-VIg" firstAttribute="leading" secondItem="VoP-Gz-oFi" secondAttribute="leading" id="TCq-Tc-x9E"/>
+                            <constraint firstItem="TX3-q3-3l7" firstAttribute="leading" secondItem="VoP-Gz-oFi" secondAttribute="leading" id="ZxL-Ww-Ghf"/>
                             <constraint firstItem="nvy-Pl-hvs" firstAttribute="top" secondItem="aMT-qz-VIg" secondAttribute="bottom" id="aYT-Xb-Ilp"/>
+                            <constraint firstAttribute="trailing" secondItem="TX3-q3-3l7" secondAttribute="trailing" id="eiS-IN-hC1"/>
                             <constraint firstAttribute="trailing" secondItem="aMT-qz-VIg" secondAttribute="trailing" id="jhm-zf-Q6T"/>
-                            <constraint firstItem="aMT-qz-VIg" firstAttribute="top" secondItem="OhI-IN-JBd" secondAttribute="bottom" id="w85-ka-HS3"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -289,6 +302,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="TX3-q3-3l7" id="FM6-bO-tEz"/>
                         <outlet property="tableView" destination="aMT-qz-VIg" id="0M8-4A-tKu"/>
                     </connections>
                 </viewController>
@@ -336,7 +350,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q6L-c1-5Qp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Sua-W0-dLr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Sua-W0-dLr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
