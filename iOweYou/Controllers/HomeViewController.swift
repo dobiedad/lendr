@@ -27,7 +27,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var lendors: Array<Debt> = []
     
-    var detailsHidden :Bool = true;
+    var detailsHidden :Bool = false;
     
     var loadCount : Int = 0;
 
@@ -59,7 +59,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidAppear(_ animated: Bool) {
         
         self.loadData()
-//        self.loadSpinner()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,16 +71,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             alert?.hideView()
             loadCount = 0
         }
-    }
-    
-    func loadSpinner(){
-        
-        let rect = CGRect(x:0, y: 0, width: 60, height: 60)
-        self.activityIndicatorView = NVActivityIndicatorView(frame: rect, type: NVActivityIndicatorType.ballScaleRippleMultiple, color: UIColor.white, padding: nil)
-        self.activityIndicatorView?.center = self.view.center
-        self.activityIndicatorView?.startAnimating()
-        
-        self.view.addSubview(activityIndicatorView!)
     }
     
     func loadData(){
@@ -246,7 +235,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         var array : NSArray = []
         var debt : Debt = Debt(data:["":""])
         cell.accessoryType = UITableViewCellAccessoryType.none
-
+        
         if(indexPath.section == 1){
             array = self.debtors as NSArray
             debt = array[indexPath.row] as! Debt
@@ -260,6 +249,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.configureForLendors(debt: debt)
         }
         
+        cell.rightLabel.isHidden = self.detailsHidden
+    
         return cell
     }
     
@@ -278,14 +269,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    
-    @IBAction func imageButtonTappe(_ sender: Any) {
+    func showHideDetails(){
         self.detailsHidden = !self.detailsHidden
         
-        if(self.detailsHidden) {
+        if(!self.detailsHidden) {
             UIView.animate(withDuration: 0.3, animations: {
                 self.setOpacityForDetailLabels(opacity: 1)
-                
             }, completion: nil)
         }
         else{
@@ -293,7 +282,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.setOpacityForDetailLabels(opacity: 0)
             }, completion: nil)
         }
-        
+        self.tableView.reloadData()
+    }
+    
+    
+    @IBAction func imageButtonTappe(_ sender: Any) {
+       self.showHideDetails()
         
     }
     

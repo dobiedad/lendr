@@ -36,6 +36,7 @@ class HomeTableCell: UITableViewCell {
         
         self.profileImage.sd_setImage(with: URL(string:debt.lenderImg), completed: nil)
         self.middleLabel.text = debt.lenderName
+        self.rightLabel.fadeIn()
         self.rightLabel.text = DebtService().formatCurrency(value:Double(debt.amount)!)
         self.checkmarkImage.isHidden = !debt.paid
 
@@ -52,6 +53,7 @@ class HomeTableCell: UITableViewCell {
         self.checkmarkImage.isHidden = !debt.paid
         self.leftLabel.text = debt.debtorName
         self.rightLabel.text = DebtService().formatCurrency(value:Double(debt.amount)!)
+        self.rightLabel.fadeIn()
         self.dateLabel.text = debt.timeAgo()
     }
     
@@ -69,6 +71,7 @@ class HomeTableCell: UITableViewCell {
         self.leftLabel.text = debt.lenderName
         self.middleLabel.text =  Phrases().returnRandomStringForLendor(type: "pending")
         self.rightLabel.text = DebtService().formatCurrency(value:Double(debt.amount)!)
+        self.rightLabel.fadeIn()
         
     }
     
@@ -79,6 +82,8 @@ class HomeTableCell: UITableViewCell {
         self.leftLabel.text = debt.debtorName
         self.middleLabel.text = Phrases().returnRandomStringForDebtor(type: "pending")
         self.rightLabel.text =  debt.currency + debt.amount
+        self.middleLabel.fadeIn()
+        self.rightLabel.fadeIn()
     }
     
     
