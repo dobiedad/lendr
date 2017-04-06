@@ -140,6 +140,7 @@ class FriendsController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         if(text.characters.count < 1){
             self.searchResults = self.allFriends
+            self.searchBar.resignFirstResponder()
         }
         else{
             self.searchResults = self.allFriends.filter(){ (User) -> Bool in

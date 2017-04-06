@@ -15,6 +15,7 @@
 		B3163D341E7AF39A00ED993D /* TableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3163D331E7AF39A00ED993D /* TableViewHeader.xib */; };
 		B3163D361E7AF40600ED993D /* TableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3163D351E7AF40600ED993D /* TableViewHeader.swift */; };
 		B3163D3A1E7B4C4B00ED993D /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3163D391E7B4C4B00ED993D /* AlertView.swift */; };
+		B32C82271E9655A000BCF6A8 /* LendrButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32C82261E9655A000BCF6A8 /* LendrButton.swift */; };
 		B33C7B551E7FF2DA008C82AE /* UserBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33C7B541E7FF2DA008C82AE /* UserBuilder.swift */; };
 		B3423C081E8037EA00717040 /* add-contact.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B3423C071E8037EA00717040 /* add-contact.pdf */; };
 		B3445CE41E7967B5009CBE1A /* Friends+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3445CE31E7967B5009CBE1A /* Friends+CoreDataProperties.swift */; };
@@ -99,6 +100,7 @@
 		B3163D351E7AF40600ED993D /* TableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHeader.swift; sourceTree = "<group>"; };
 		B3163D391E7B4C4B00ED993D /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		B32393991E77500A00097A7A /* iOweYou.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOweYou.entitlements; sourceTree = "<group>"; };
+		B32C82261E9655A000BCF6A8 /* LendrButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LendrButton.swift; sourceTree = "<group>"; };
 		B33C7B541E7FF2DA008C82AE /* UserBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBuilder.swift; sourceTree = "<group>"; };
 		B33C7B561E7FF7C6008C82AE /* iOweYou-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOweYou-Bridging-Header.h"; sourceTree = "<group>"; };
 		B3423C071E8037EA00717040 /* add-contact.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "add-contact.pdf"; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				B3163D331E7AF39A00ED993D /* TableViewHeader.xib */,
 				B3163D351E7AF40600ED993D /* TableViewHeader.swift */,
 				B3163D391E7B4C4B00ED993D /* AlertView.swift */,
+				B32C82261E9655A000BCF6A8 /* LendrButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				B39ECDAE1E7C9D7F00841E6B /* Phrases.swift in Sources */,
 				B3E2E3B71E76DF6C0052ADBD /* User.swift in Sources */,
 				B39A306A1E79DFD70047BF8D /* RootViewController.swift in Sources */,
+				B32C82271E9655A000BCF6A8 /* LendrButton.swift in Sources */,
 				B3475FEA1E78634000F138C3 /* DebtService.swift in Sources */,
 				B3C18ABB1E7719D90017AF61 /* UserService.swift in Sources */,
 				B3445CE61E796866009CBE1A /* Friends+CoreDataClass.swift in Sources */,

@@ -31,19 +31,13 @@ class DebtViewController: UIViewController {
     }
 
     func setupView() {
-        let netLabel:String?
         let zero = 0.00
     if (self.selectedType == "debtors"){
             let net = self.debtService.calculateNetForUser(fbid: (self.debt?.debtor)!)
             self.profileImage.sd_setImage(with: URL(string: (self.debt?.debtorImg)!))
             self.title = self.debt?.debtorName
-            if (Double(net)! > zero) {
-                netLabel = "Owes you "
-            }
-            else{
-                netLabel = "You owe "
-            }
-            self.netAmount.text = netLabel! + String(describing: Double(net)?.absoluteValue)
+     
+            self.netAmount.text = String(describing: self.debtService.formatCurrency(value:Double(net)!))
             self.creatorView.isHidden = (self.debt?.paid)!
 
             self.owesYouAmount.text = self.debtService.formatCurrency(value:Double(self.debtService.calculateTotalImOwedFrom(fbid: (self.debt?.debtor)!))!)
@@ -55,14 +49,7 @@ class DebtViewController: UIViewController {
             self.profileImage.sd_setImage(with: URL(string: (self.debt?.lenderImg)!))
             self.title = self.debt?.lenderName
 
-            if (Double(net)! > zero) {
-                netLabel = "Owes you "
-            }
-            else{
-                netLabel = "You owe "
-            }
-            self.netAmount.text = netLabel! + String(describing: Double(net)?.absoluteValue)
-
+        self.netAmount.text = String(describing: self.debtService.formatCurrency(value:Double(net)!))
             self.owesYouAmount.text = self.debtService.formatCurrency(value:Double(self.debtService.calculateTotalImOwedFrom(fbid: (self.debt?.lender)!))!)
             self.youOweAmount.text = self.debtService.formatCurrency(value:Double(self.debtService.calculateTotalIOweTo(fbid: (self.debt?.lender)!))!)
         }

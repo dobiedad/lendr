@@ -111,7 +111,7 @@ class DebtService: NSObject {
         var total = Double(self.calculateTotalImOwedFrom(fbid:fbid))! - Double(self.calculateTotalIOweTo(fbid: fbid))!;
         
        
-        return  self.formatCurrency(value:total)
+        return  String(total)
     }
 
     func formatCurrency(value: Double) -> String {
