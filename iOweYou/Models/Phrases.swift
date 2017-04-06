@@ -9,8 +9,7 @@ public class Phrases: NSObject {
     override init() {
         self.debtors = [
             "paid":[
-                "You Paid",
-                "You resolved a debt of",
+                "You resolved a debt with",
                 "You paid",
                 "You reimbursed",
                 "You returned",
@@ -38,7 +37,7 @@ public class Phrases: NSObject {
                 "reimbursed you",
                 "has compensated you",
                 "has returned",
-                "given back",
+                "gave back",
                 "has settled",
                 "has resolved a debt of"
             ],

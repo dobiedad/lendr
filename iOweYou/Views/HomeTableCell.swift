@@ -32,27 +32,26 @@ class HomeTableCell: UITableViewCell {
 
         if(debt.paid == true){
             self.leftLabel.text = Phrases().returnRandomStringForDebtor(type: "paid")
-            self.accessoryType = UITableViewCellAccessoryType.checkmark
         }
         
         self.profileImage.sd_setImage(with: URL(string:debt.lenderImg), completed: nil)
         self.middleLabel.text = debt.lenderName
-        self.rightLabel.text = debt.currency + debt.amount
-        self.dateLabel.text = debt.timeAgo()
+        self.rightLabel.text = DebtService().formatCurrency(value:Double(debt.amount)!)
+        self.checkmarkImage.isHidden = !debt.paid
+
     }
     
     func configureForLendors(debt:Debt) {
-        
+        self.middleLabel.text = Phrases().returnRandomStringForLendor(type: "owed")
+
         if(debt.paid == true){
             self.middleLabel.text = Phrases().returnRandomStringForLendor(type: "paid")
-            self.accessoryType = UITableViewCellAccessoryType.checkmark
         }
         
         self.profileImage.sd_setImage(with: URL(string:debt.debtorImg), completed: nil)
-        
+        self.checkmarkImage.isHidden = !debt.paid
         self.leftLabel.text = debt.debtorName
-        self.middleLabel.text = Phrases().returnRandomStringForLendor(type: "owed")
-        self.rightLabel.text = debt.currency + debt.amount
+        self.rightLabel.text = DebtService().formatCurrency(value:Double(debt.amount)!)
         self.dateLabel.text = debt.timeAgo()
     }
     
@@ -69,7 +68,7 @@ class HomeTableCell: UITableViewCell {
         self.profileImage.sd_setImage(with: URL(string:debt.lenderImg), completed: nil)
         self.leftLabel.text = debt.lenderName
         self.middleLabel.text =  Phrases().returnRandomStringForLendor(type: "pending")
-        self.rightLabel.text = debt.currency + debt.amount
+        self.rightLabel.text = DebtService().formatCurrency(value:Double(debt.amount)!)
         
     }
     

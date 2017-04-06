@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B85753069D24DACD75F8BED /* Pods_iOweYouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F2A6709363CEA8CD0C79E9 /* Pods_iOweYouTests.framework */; };
+		B3016A581E80B7E500B000EA /* DebtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3016A571E80B7E500B000EA /* DebtViewController.swift */; };
 		B3163D2D1E7AC19200ED993D /* PendingDebtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3163D2C1E7AC19200ED993D /* PendingDebtController.swift */; };
 		B3163D301E7AD4C700ED993D /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3163D2F1E7AD4C700ED993D /* HomeTableCell.swift */; };
 		B3163D321E7AD51C00ED993D /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3163D311E7AD51C00ED993D /* HomeTableViewCell.xib */; };
@@ -69,6 +70,8 @@
 		B3E2E3B71E76DF6C0052ADBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E2E3B61E76DF6C0052ADBD /* User.swift */; };
 		B3E2E3C11E76E1D90052ADBD /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E2E3C01E76E1D90052ADBD /* AuthService.swift */; };
 		B3E68C711E7A41B9003BAE95 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E68C701E7A41B9003BAE95 /* UIColor+Additions.swift */; };
+		B3F71E5A1E815A8E003BAF74 /* paid.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B3F71E591E815A8E003BAF74 /* paid.pdf */; };
+		B3F71E5C1E815C30003BAF74 /* paid_straight.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B3F71E5B1E815C30003BAF74 /* paid_straight.pdf */; };
 		E114C645E9F887DB928EAB8C /* Pods_iOweYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA25172CB4F685F882891AA /* Pods_iOweYou.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +91,7 @@
 		75F2A6709363CEA8CD0C79E9 /* Pods_iOweYouTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOweYouTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA25172CB4F685F882891AA /* Pods_iOweYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOweYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5EBCA399A52F0CFF5A21A03 /* Pods-iOweYouTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOweYouTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOweYouTests/Pods-iOweYouTests.release.xcconfig"; sourceTree = "<group>"; };
+		B3016A571E80B7E500B000EA /* DebtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtViewController.swift; sourceTree = "<group>"; };
 		B3163D2C1E7AC19200ED993D /* PendingDebtController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingDebtController.swift; sourceTree = "<group>"; };
 		B3163D2F1E7AD4C700ED993D /* HomeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
 		B3163D311E7AD51C00ED993D /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 		B3E2E3B61E76DF6C0052ADBD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B3E2E3C01E76E1D90052ADBD /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B3E68C701E7A41B9003BAE95 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Additions.swift"; path = "../../../Downloads/UIColor+Additions.swift"; sourceTree = "<group>"; };
+		B3F71E591E815A8E003BAF74 /* paid.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = paid.pdf; sourceTree = "<group>"; };
+		B3F71E5B1E815C30003BAF74 /* paid_straight.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = paid_straight.pdf; sourceTree = "<group>"; };
 		FEB7EBB848CA92D75E11AC9F /* Pods-iOweYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOweYou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOweYou/Pods-iOweYou.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,7 +227,9 @@
 			children = (
 				B3423C071E8037EA00717040 /* add-contact.pdf */,
 				B3901EAA1E7C57AA00A235B5 /* facebook.pdf */,
+				B3F71E5B1E815C30003BAF74 /* paid_straight.pdf */,
 				B39ECDD71E7CB74200841E6B /* owe.pdf */,
+				B3F71E591E815A8E003BAF74 /* paid.pdf */,
 				B3901EB41E7C6E9C00A235B5 /* power.png */,
 				B3901EBA1E7C6FFE00A235B5 /* plus-sign-to-add.pdf */,
 				B3901EBB1E7C6FFE00A235B5 /* notification.pdf */,
@@ -276,6 +284,7 @@
 				B39A30671E79DE370047BF8D /* LoginViewController.swift */,
 				B39A30691E79DFD70047BF8D /* RootViewController.swift */,
 				B3163D2C1E7AC19200ED993D /* PendingDebtController.swift */,
+				B3016A571E80B7E500B000EA /* DebtViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -476,6 +485,7 @@
 				B39ECDD61E7CB6BE00841E6B /* iTunesArtwork@2x.png in Resources */,
 				B39ECDD41E7CB6BE00841E6B /* Icon@2x.png in Resources */,
 				B39ECDCE1E7CB6BE00841E6B /* Icon-Small-50.png in Resources */,
+				B3F71E5C1E815C30003BAF74 /* paid_straight.pdf in Resources */,
 				B39ECDD51E7CB6BE00841E6B /* iTunesArtwork.png in Resources */,
 				B3E2E39A1E76D92B0052ADBD /* LaunchScreen.storyboard in Resources */,
 				B3901E9F1E7C40BC00A235B5 /* Fibon_Sans_Regular.otf in Resources */,
@@ -491,6 +501,7 @@
 				B3901EB91E7C6E9C00A235B5 /* power@3x.png in Resources */,
 				B39ECDC81E7CB6BE00841E6B /* Icon-60@3x.png in Resources */,
 				B3E2E3971E76D92B0052ADBD /* Assets.xcassets in Resources */,
+				B3F71E5A1E815A8E003BAF74 /* paid.pdf in Resources */,
 				B3E2E3921E76D92B0052ADBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +614,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3163D2D1E7AC19200ED993D /* PendingDebtController.swift in Sources */,
+				B3016A581E80B7E500B000EA /* DebtViewController.swift in Sources */,
 				B39A30681E79DE370047BF8D /* LoginViewController.swift in Sources */,
 				B3E2E38D1E76D92B0052ADBD /* AppDelegate.swift in Sources */,
 				B3E2E3C11E76E1D90052ADBD /* AuthService.swift in Sources */,

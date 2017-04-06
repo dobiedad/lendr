@@ -40,6 +40,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     let debtService = DebtService();
     
     var alert : SCLAlertView?
+    
+    var selectedDebt : Debt?
+    
+    var selectedType : String?
 
     var activityIndicatorView : NVActivityIndicatorView?
     
@@ -86,9 +90,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.debtService.loadMy(type: "lenders", approved: true, completion: { (debtors) in
             
             self.debtors = debtors as! Array<Debt>;
-            self.iOweLabel.text = self.debtService.currencyString() + self.debtService.calculateTotalDebt(array: self.debtors)
+            self.iOweLabel.text = self.debtService.formatCurrency(value:Double(self.debtService.calculateTotalDebt(array: self.debtors))!)
             let notPaid = self.debtors.filter( { !($0.paid) })
-            
+            self.appDelegate.setDebtors(debtors:debtors as! Array<Debt>)
+
             self.sections[1] = "Friends i owe money (\(notPaid.count))"
             
             self.loaded()
@@ -96,12 +101,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         })
         self.debtService.loadMy(type: "debtors", approved: true,  completion: { (lenders) in
             self.lendors = lenders as! Array<Debt>;
-            self.imOwedLabel.text = self.debtService.currencyString() + self.debtService.calculateTotalDebt(array: self.lendors)
+            self.imOwedLabel.text = self.debtService.formatCurrency(value:Double(self.debtService.calculateTotalDebt(array: self.lendors))!)
             let notPaid = self.lendors.filter( { !($0.paid) })
             
             self.sections[0] = "Friends who owe me money (\(notPaid.count))";
             self.loaded()
-            
+            self.appDelegate.setLendors(lendors: self.lendors )
+
             self.tableView.reloadData()
         })
         
@@ -205,25 +211,33 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        if(indexPath.section == 0){
-            let debt : Debt = lendors[indexPath.row]
+        if(indexPath.section == 1){
+            self.selectedType = "lendors"
+            let debt : Debt = debtors[indexPath.row]
+            self.selectedDebt = debt
+        }
+        else{
+            self.selectedType = "debtors"
+        let debt : Debt = lendors[indexPath.row]
+        self.selectedDebt = debt
 
-            if(debt.paid == false){
-                let alert = AlertView().defaultAlert()
-                
-                
-                alert.addButton("Confirm") {
-                    self.debtService.resolveDebt(debt: debt)
-                    
-                }
-                let message = debt.debtorName + " paid you  " + debt.currency + debt.amount
-                alert.showInfo("", subTitle:message , closeButtonTitle: "Cancel")
-            }
-      
+        }
+    
+        self.performSegue(withIdentifier: "transitionToDebtVC", sender: self)
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue?, sender: Any?) {
+        
+        if (segue?.identifier == "transitionToDebtVC") {
+            
+            
+            let vc:DebtViewController = segue!.destination as! DebtViewController
+            
+            vc.setUpDebt(type: self.selectedType!, debt: self.selectedDebt!)
+            
         }
         
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

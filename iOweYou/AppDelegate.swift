@@ -9,6 +9,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     var currentUser : User?
+    var debtors : Array<Debt?> = []
+    var lendors : Array<Debt?> = []
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FIRApp.configure()
@@ -52,7 +55,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setCurrent(user:User){
         self.currentUser = user;
     }
-    
+
+    func setDebtors(debtors:Array<Debt>){
+        self.debtors = debtors;
+    }
+
+    func setLendors(lendors:Array<Debt>){
+        self.lendors = lendors;
+    }
 
     lazy var persistentContainer: NSPersistentContainer = {
         /*

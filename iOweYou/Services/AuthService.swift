@@ -91,8 +91,8 @@ class AuthService: NSObject {
 
                     
                     print((responseDictionary["data"] as! NSArray).count)
-
-                    completion(friends)
+                    
+                    completion(friends.sorted { ($0 as! User).name < ($1 as! User).name } as NSArray)
                 }
             }
         }
